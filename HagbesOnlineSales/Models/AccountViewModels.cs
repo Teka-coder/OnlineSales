@@ -60,6 +60,8 @@ namespace HagbesOnlineSales.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+        [Display(Name ="Roles")]
+        public string UserRole { get; set; }
     }
 
     public class RegisterViewModel

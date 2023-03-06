@@ -51,6 +51,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -175,12 +177,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\UserDashboardController.cs" />
     <Compile Include="DataAccess\Configurations\CustomerConfiguration.cs" />
     <Compile Include="DataAccess\Configurations\EntityConfiguration.cs" />
     <Compile Include="DataAccess\Configurations\OrderConfiguration.cs" />
     <Compile Include="DataAccess\Configurations\OrderDetailsConfiguration.cs" />
     <Compile Include="DataAccess\Configurations\ProductConfiguration.cs" />
-    <Compile Include="DataAccess\DashboardContext.cs" />
+    <Compile Include="DataAccess\HagbesSalesContext.cs" />
     <Compile Include="DataAccess\Entitites\Customer.cs" />
     <Compile Include="DataAccess\Entitites\IEntity.cs" />
     <Compile Include="DataAccess\Entitites\Order.cs" />
@@ -190,6 +194,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CustomHelperBase.cs" />
+    <Compile Include="Migrations\202302201141118_initial_migration.cs" />
+    <Compile Include="Migrations\202302201141118_initial_migration.Designer.cs">
+      <DependentUpon>202302201141118_initial_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -955,14 +964,16 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap-reboot.css" />
     <Content Include="Content\css\bootstrap-reboot.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\dataTables.bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -1016,7 +1027,29 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Images\Air-compressor.jpg" />
+    <Content Include="Images\Asphalt-Concrete.jpg" />
+    <Content Include="Images\Atlas-copco-rock-drill.jpg" />
+    <Content Include="Images\Crushing-plant-Icon.jpg" />
+    <Content Include="Images\daewoo-truck-new.jpg" />
+    <Content Include="Images\Deutz-edieted.jpg" />
+    <Content Include="Images\disc-pulpers-500x500.jpg" />
+    <Content Include="Images\Electric-Motors.jpg" />
+    <Content Include="Images\Green-power-edited.jpg" />
+    <Content Include="Images\hangcha.jpg" />
+    <Content Include="Images\Higer-Bus.png" />
+    <Content Include="Images\Hitachi-Excavator-4.jpg" />
+    <Content Include="Images\logo1.png" />
+    <Content Include="Images\luminous-edited.png" />
+    <Content Include="Images\Mccormick-tractor-edited.jpg" />
+    <Content Include="Images\new-logo-from-talar-resized.png" />
+    <Content Include="Images\Pumps-edietd.jpg" />
+    <Content Include="Images\Sokkia-Product-Range.jpg" />
+    <Content Include="Images\Tools.jpg" />
+    <Content Include="Images\turnkey-solutions-1.jpg" />
+    <Content Include="Images\Wheel-Loader.jpg" />
+    <Content Include="Images\yamaha-motor-edited.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\lib\owlcarousel\LICENSE" />
@@ -1195,6 +1228,8 @@
     <Content Include="assets\vendor\tinymce\composer.json" />
     <Content Include="assets\vendor\tinymce\package.json" />
     <Content Include="assets\vendor\tinymce\README.md" />
+    <None Include="Properties\PublishProfiles\tekabeka-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tekabeka-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -1254,10 +1289,13 @@
     <Content Include="Views\Products\DisplayShoppingCart.cshtml" />
     <Content Include="Views\Products\GetProductByCategory.cshtml" />
     <Content Include="Views\Products\ProductList.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\Foo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
+    <Folder Include="ExternalModel\" />
+    <Folder Include="Views\UserDashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1277,6 +1315,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202302201141118_initial_migration.resx">
+      <DependentUpon>202302201141118_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

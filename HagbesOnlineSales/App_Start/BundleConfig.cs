@@ -27,7 +27,7 @@ namespace HagbesOnlineSales
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       //"~/Content/bootstrap.css",
-                      "~/Content/css/style.css",
+                      "~/Content/style.css",
                       //"~/Content/site.css",
                       "~/Content/bootstrap.min.css",
                       "~/Content/metisMenu.min.css",

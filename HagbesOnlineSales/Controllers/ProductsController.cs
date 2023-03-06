@@ -35,7 +35,7 @@ namespace HagbesOnlineSales.Controllers
         [HttpGet]
         public ActionResult GetProductByCategory(string category)
         {
-            using (DashboardContext _context = new DashboardContext())
+            using (HagbesSalesContext _context = new HagbesSalesContext())
             {
                 List<ProductsViewModel> productList = _context.ProductSet
                     .Where(p => p.ProductType.ToLower().Equals(category.ToLower()))
@@ -89,7 +89,7 @@ namespace HagbesOnlineSales.Controllers
             int customerId = (int)Session["CustomerId"];
             bool statusTran = false;
 
-            DashboardContext _context = new DashboardContext();
+            HagbesSalesContext _context = new HagbesSalesContext();
 
             using (DbContextTransaction dbTran = _context.Database.BeginTransaction())
             {

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace HagbesOnlineSales.Controllers
 {
+    [Authorize(Roles =("Admin"))]
     public class DashboardController : Controller
     {
         // GET: Dashboard
@@ -19,7 +20,7 @@ namespace HagbesOnlineSales.Controllers
         public ActionResult Dashboard()
         {
 
-            using (DashboardContext _context = new DashboardContext())
+            using (HagbesSalesContext _context = new HagbesSalesContext())
             {
                 ViewBag.CountCustomers = _context.CustomerSet.Count();
                 ViewBag.CountOrders = _context.OrderSet.Count();
@@ -41,7 +42,7 @@ namespace HagbesOnlineSales.Controllers
         public ActionResult TopCustomers()
         {
             List<TopCustomerViewModel> topFiveCustomers = null;
-            using (DashboardContext _context = new DashboardContext())
+            using (HagbesSalesContext _context = new HagbesSalesContext())
             {
                 var OrderByCustomer = (from o in _context.OrderSet
                                       group o by o.Customer.ID into g
@@ -69,7 +70,7 @@ namespace HagbesOnlineSales.Controllers
 
         public ActionResult OrdersByCountry()
         {
-            DashboardContext _context = new DashboardContext();
+            HagbesSalesContext _context = new HagbesSalesContext();
             
              var ordersByCountry = (from o in _context.OrderSet
                                        group o by o.Customer.CustomerCountry into g
@@ -85,7 +86,7 @@ namespace HagbesOnlineSales.Controllers
 
         public ActionResult CustomersByCountry()
         {
-            DashboardContext _context = new DashboardContext();
+            HagbesSalesContext _context = new HagbesSalesContext();
 
             var customerByCountry = (from c in _context.CustomerSet
                                    group c by c.CustomerCountry into g
@@ -101,7 +102,7 @@ namespace HagbesOnlineSales.Controllers
 
         public ActionResult OrdersByCustomer()
         {
-            DashboardContext _context = new DashboardContext();
+            HagbesSalesContext _context = new HagbesSalesContext();
             var ordersByCustomer = (from o in _context.OrderSet
                                     group o by o.Customer.ID into g
                                     select new
@@ -123,7 +124,7 @@ namespace HagbesOnlineSales.Controllers
         {
             List<ProductOrCustomerViewModel> result = null;
 
-            using (DashboardContext _context = new DataAccess.DashboardContext())
+            using (HagbesSalesContext _context = new DataAccess.HagbesSalesContext())
             {
                 if (!string.IsNullOrEmpty(type))
                 {

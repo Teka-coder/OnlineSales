@@ -24,7 +24,7 @@ namespace HagbesOnlineSales.Controllers
         [HttpGet]
         public ActionResult GetCustomers()
         {
-            using (DashboardContext _context = new DashboardContext())
+            using (HagbesSalesContext _context = new HagbesSalesContext())
             {
                 var customerList = _context.CustomerSet.Select(c => new
                 {

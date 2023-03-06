@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=.;Initial Catalog=aspnet-HagbesOnlineSales;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tekalegn\.Berako\\source\\repos\\HagbesOnlineSales\\HagbesOnlineSales\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DashboardOrder-Web.config Connection String" description="DashboardOrder Connection String used in web.config by the application to access the database." defaultValue="Data Source=.;Initial Catalog=DashboardOrder;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tekalegn\.Berako\\source\\repos\\HagbesOnlineSales\\HagbesOnlineSales\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DashboardOrder']/@connectionString" />
+  </parameter>
+  <parameter name="ExternalEntities-Web.config Connection String" description="ExternalEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ExternalModel.ExternalModel.csdl|res://*/ExternalModel.ExternalModel.ssdl|res://*/ExternalModel.ExternalModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=aspnet-HagbesOnlineSales;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tekalegn\.Berako\\source\\repos\\HagbesOnlineSales\\HagbesOnlineSales\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ExternalEntities']/@connectionString" />
+  </parameter>
+  <parameter name="MyAdoEntities-Web.config Connection String" description="MyAdoEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ExternalModel.AdoModel.csdl|res://*/ExternalModel.AdoModel.ssdl|res://*/ExternalModel.AdoModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=TEKALEGN-IT;initial catalog=aspnet-HagbesOnlineSales;user id=NewUser;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tekalegn\.Berako\\source\\repos\\HagbesOnlineSales\\HagbesOnlineSales\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MyAdoEntities']/@connectionString" />
+  </parameter>
+</parameters>

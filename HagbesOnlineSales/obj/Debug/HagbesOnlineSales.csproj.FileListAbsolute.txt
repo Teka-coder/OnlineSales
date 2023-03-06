@@ -82,4 +82,6 @@ C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\De
 C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.csproj.CopyComplete
 C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.dll
 C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.pdb
+C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.Migrations.initial_migration.resources
+C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.csproj.GenerateResource.cache
 C:\Users\Tekalegn.Berako\source\repos\HagbesOnlineSales\HagbesOnlineSales\obj\Debug\HagbesOnlineSales.csproj.AssemblyReference.cache
